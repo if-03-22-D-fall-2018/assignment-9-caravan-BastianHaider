@@ -10,15 +10,23 @@
  * <your description here>
  *-----------------------------------------------------------------------------
 */
+
+#include "stdlib.h"
+#include "general.h"
+#include "caravan.h"
+
+#define COUNT_CARAVANS 5
+
+typedef struct NodeImplementation* Node;
+
 struct NodeImplementation
 {
     PackAnimal animal;
     struct NodeImplementation* next;
 };
 
-typedef struct NodeImplementation* Node;
-
-struct CaravanImplementation{
+struct CaravanImplementation
+{
     int length;
     Node head;
 };
@@ -26,13 +34,14 @@ struct CaravanImplementation{
 Caravan new_caravan()
 {
   Caravan caravan = (Caravan)malloc(sizeof(struct CaravanImplementation));
-  caravan->length = 0;
   caravan->head = 0;
+  caravan->length = 0;  
   return caravan;
 }
 
 int get_length(Caravan caravan)
 {
+  return caravan->length;
 }
 
 void delete_caravan(Caravan caravan)
