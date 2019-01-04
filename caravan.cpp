@@ -10,8 +10,25 @@
  * <your description here>
  *-----------------------------------------------------------------------------
 */
+struct NodeImplementation
+{
+    PackAnimal animal;
+    struct NodeImplementation* next;
+};
+
+typedef struct NodeImplementation* Node;
+
+struct CaravanImplementation{
+    int length;
+    Node head;
+};
+
 Caravan new_caravan()
 {
+  Caravan caravan = (Caravan)malloc(sizeof(struct CaravanImplementation));
+  caravan->length = 0;
+  caravan->head = 0;
+  return caravan;
 }
 
 int get_length(Caravan caravan)
