@@ -35,7 +35,7 @@ Caravan new_caravan()
 {
   Caravan caravan = (Caravan)malloc(sizeof(struct CaravanImplementation));
   caravan->head = 0;
-  caravan->length = 0;  
+  caravan->length = 0;
   return caravan;
 }
 
@@ -58,6 +58,7 @@ void remove_pack_animal(Caravan caravan, PackAnimal animal)
 
 int get_caravan_load(Caravan caravan)
 {
+  return 0;
 }
 
 void unload(Caravan caravan)
@@ -66,4 +67,9 @@ void unload(Caravan caravan)
 
 int get_caravan_speed(Caravan caravan)
 {
+  return 0;
+}
+void optimize_load(Caravan caravan)
+{
+
 }
