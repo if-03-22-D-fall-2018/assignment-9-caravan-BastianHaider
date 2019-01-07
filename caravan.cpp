@@ -137,9 +137,19 @@ void unload(Caravan caravan)
 
 int get_caravan_speed(Caravan caravan)
 {
-  return 0;
+  Node currentNode = caravan->head;
+   int speed = 50;
+   while(currentNode != 0)
+   {
+       if(get_actual_speed(currentNode->animal)<speed)
+       {
+           speed = get_actual_speed(currentNode->animal);
+       }
+       currentNode = currentNode->next;
+   }
+   return speed;
 }
 void optimize_load(Caravan caravan)
 {
-
+  
 }
