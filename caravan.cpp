@@ -62,6 +62,10 @@ void add_pack_animal(Caravan caravan, PackAnimal animal)
   {
     return;
   }
+  if(get_caravan(animal) != 0 && get_caravan(animal) != caravan)
+  {
+    remove_pack_animal(get_caravan(animal), animal);
+  }
   Node newNode = (Node)malloc(sizeof(struct NodeImplementation));
   newNode->animal=animal;
   newNode->next=0;
